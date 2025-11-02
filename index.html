@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <main>
     <header>
         <img src="img/logo-culturama.png" alt="Logo da Culturama">
         <h1>Pesquisa Online</h1>
@@ -32,7 +33,7 @@
                 <input id="birthDate" type="date" name="userBirthDate" min="1900-01-01" max="2025-12-31">
                 <br>
                 <label for="email">Email</label>
-                <input id="email" type="email" name="userEmail" required>
+                <input id="email" type="email" name="userEmail" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="exemplo@email.com" title="Digite um email válido" required>
                 <br>
                 <label for="phone">Telefone</label>
                 <input id="phone" type="tel" name="userPhone" required pattern="[0-9]{11}"
@@ -153,6 +154,7 @@
             <button type="reset">Limpar</button>
 
     </section>
+</main>
 </body>
 
 </html>
