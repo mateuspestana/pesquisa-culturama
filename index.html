@@ -90,7 +90,7 @@
                     <option value="TO">Tocantins</option>
                     <option value="notInformed">Prefiro não informar</option>
                 </select>
-                <input type="text" name="userCity" autocomplete="address-level2" placeholder="Ex.: Rio de Janeiro"/>
+                <input type="text" name="userCity" autocomplete="address-level2" placeholder="Ex.: Rio de Janeiro" />
             </fieldset>
             <fieldset>
                 <legend>Hábitos</legend>
@@ -109,7 +109,7 @@
                 <label for="tiktok">TikTok</label><br>
 
                 <label for="musicStyle">Selecione os estilos musicais que você gosta:</label>
-                <input id=""musicStyle" name="musicStyle" type="text">
+                <input id="" musicStyle" name="musicStyle" type="text">
                 <datalist id="styleTypes">
                     <option value="rock"></option>
                     <option value="pop"></option>
@@ -117,8 +117,24 @@
                     <option value="forró"></option>
                 </datalist>
                 <br>
-<label for="favoriteColor">Cor favorita:</label>
-<input id="favoriteColor" type="color" name="favoriteColor" value="#000000">
+                <label for="favoriteColor">Cor favorita:</label>
+                <input id="favoriteColor" type="color" name="favoriteColor" value="#000000">
+            </fieldset>
+            <fieldset>
+                <legend>Opinião:</legend>
+                <p>O que você acha da qualidade do site?</p>
+                <textarea id="opinion" name="opinion" rows="5" cols="30" placeholder="Digite sua opinião aqui"></textarea>
+                <br>
+                <label for="rating">Avalie o site:</label><br>
+                <input id="ruim" type="radio" name="rating" value="Ruim">
+                <label for="ruim">Ruim</label><br>
+                <input id="regular" type="radio" name="rating" value="Regular">
+                <label for="regular">Regular</label><br>
+                <input id="bom" type="radio" name="rating" value="Bom">
+                <label for="bom">Bom</label><br>    
+                <input id="excelente" type="radio" name="rating" value="Excelente">
+                <label for="excelente">Excelente</label><br>   
+
             </fieldset>
             <button type="submit">Enviar</button>
 
