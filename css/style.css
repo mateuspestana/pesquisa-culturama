@@ -101,3 +101,22 @@ button[type="reset"]:hover{
     background-color: orangered;
     color: #ffffff;
 }
+
+footer {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+button#backButton {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 40px auto 0;
+}
