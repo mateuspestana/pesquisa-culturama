@@ -11,20 +11,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Work+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main>
-        <header>
+    <main role="main" aria-labelledby="successTitle">
+        <header role="banner">
             <img src="img/logo-culturama.png" alt="Logo da Culturama">
-            <h1>Dados enviados com sucesso</h1>
+            <h1 id="successTitle">Dados enviados com sucesso</h1>
         </header>
-        <section>
-            <p>Obrigado por participar da pesquisa. Seu feedback é muito importante para nós.
+        <section role="region" aria-live="polite" aria-labelledby="successTitle" aria-describedby="successMessage">
+            <p id="successMessage" role="status">Obrigado por participar da pesquisa. Seu feedback é muito importante para nós.
                 <br>
                 <br>
-                <button type="button" id="backButton" onclick="window.location.href='index.html'">Voltar</button>
+                <button type="button" id="backButton" onclick="window.location.href='index.html'" aria-label="Voltar para o formulário de pesquisa">Voltar</button>
             </p>
         </section>
     </main>
-    <footer>
+    <footer role="contentinfo">
         <p>Todos os direitos reservados MACAPE &copy; 2025</p>
     </footer>
 </body>

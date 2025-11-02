@@ -13,15 +13,17 @@
 </head>
 
 <body>
-    <main>
-    <header>
-        <img src="img/logo-culturama.png" alt="Logo da Culturama">
-        <h1>Pesquisa Online</h1>
-    </header>
-    <section>
-        <form action="sucesso.html" method="get">
-            <fieldset>
-                <legend>Dados pessoais</legend>
+    <main role="main" aria-labelledby="title">
+        <header role="banner">
+            <img src="img/logo-culturama.png" alt="Logo da Culturama">
+            <h1 id="title">Pesquisa Online</h1>
+        </header>
+        <section role="region" aria-labelledby="title">
+            <form action="sucesso.html" method="get" aria-labelledby="title" aria-describedby="formInstructions">
+                <small id="formInstructions">Preencha todos os campos obrigatórios e revise suas respostas antes de enviar.</small>
+                <fieldset aria-describedby="personalDataHint">
+                    <legend>Dados pessoais</legend>
+                    <small id="personalDataHint">Informações utilizadas para contato durante a pesquisa.</small>
                 <!-- Dados pessoais -->
                 <label for="name">Nome</label>
                 <input id="name" type="text" name="userName" required>
@@ -33,29 +35,34 @@
                 <input id="birthDate" type="date" name="userBirthDate" min="1900-01-01" max="2025-12-31">
                 <br>
                 <label for="email">Email</label>
-                <input id="email" type="email" name="userEmail" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="exemplo@email.com" title="Digite um email válido" required>
+                <input id="email" type="email" name="userEmail" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="exemplo@email.com" title="Digite um email válido" aria-describedby="emailHint" required>
+                <small id="emailHint">Digite um email válido no formato nome@dominio.com.</small>
                 <br>
                 <label for="phone">Telefone</label>
-                <input id="phone" type="tel" name="userPhone" required pattern="[0-9]{11}"
+                <input id="phone" type="tel" name="userPhone" aria-describedby="phoneHint" required pattern="[0-9]{11}"
                     placeholder="DDD + Número sem espaço ou hífen">
+                <small id="phoneHint">Informe apenas números, incluindo o DDD e o número do telefone.</small>
                 <br>
                 <label for="image">Foto</label>
                 <input id="image" type="file" name="userImage" accept="image/*">
             </fieldset>
-            <fieldset>
-                <legend>Perfil</legend>
-                <p>Gênero:</p>
-                <input id="feminino" type="radio" name="userGender" value="Feminino">
-                <label for="feminino">Feminino</label>
+            <fieldset aria-describedby="perfilHint">
+                <legend id="perfilLegend">Perfil</legend>
+                <small id="perfilHint">Informe como prefere ser identificado e onde reside.</small>
+                <p id="genderLabel">Gênero:</p>
+                <div role="radiogroup" aria-labelledby="genderLabel">
+                    <input id="feminino" type="radio" name="userGender" value="Feminino">
+                    <label for="feminino">Feminino</label>
 
-                <input id="masculino" type="radio" name="userGender" value="Masculino">
-                <label for="masculino">Masculino</label>
+                    <input id="masculino" type="radio" name="userGender" value="Masculino">
+                    <label for="masculino">Masculino</label>
 
-                <input id="notInformed" type="radio" name="userGender" value="notInformed">
-                <label for="notInformed">Prefiro não informar</label>
+                    <input id="notInformed" type="radio" name="userGender" value="notInformed">
+                    <label for="notInformed">Prefiro não informar</label>
+                </div>
                 <br>
                 <label for="maritalStatus">Estado civil:</label>
-                <select name="maritalStatus">
+                <select id="maritalStatus" name="maritalStatus" aria-describedby="maritalStatusHint">
                     <option value="notInformed">Selectione...</option>
                     <option value="single">Solteiro</option>
                     <option value="married">Casado</option>
@@ -63,9 +70,10 @@
                     <option value="widowed">Viúvo</option>
                     <option value="notInformed">Prefiro não informar</option>
                 </select>
+                <small id="maritalStatusHint">Selecione a opção que melhor descreve seu estado civil.</small>
                 <br>
                 <label for="userState">Estado:</label>
-                <select name="userState">
+                <select id="userState" name="userState" aria-describedby="stateHint">
                     <option value="notInformed">Selectione...</option>
                     <option value="AC">Acre</option>
                     <option value="AL">Alagoas</option>
@@ -96,65 +104,77 @@
                     <option value="TO">Tocantins</option>
                     <option value="notInformed">Prefiro não informar</option>
                 </select>
-                <input type="text" name="userCity" autocomplete="address-level2" placeholder="Ex.: Rio de Janeiro" />
+                <small id="stateHint">Escolha o estado onde você mora atualmente.</small>
+                <br>
+                <label for="userCity">Cidade:</label>
+                <input id="userCity" type="text" name="userCity" autocomplete="address-level2" placeholder="Ex.: Rio de Janeiro" aria-describedby="cityHint">
+                <small id="cityHint">Digite o nome da sua cidade.</small>
             </fieldset>
-            <fieldset>
+            <fieldset aria-describedby="habitsHint">
                 <legend>Hábitos</legend>
-                <p>Redes Sociais:</p>
-                <input id="instagram" type="checkbox" name="social" value="Instagram">
-                <label for="instagram">Instagram</label><br>
-                <input id="facebook" type="checkbox" name="social" value="Facebook">
-                <label for="facebook">Facebook</label><br>
-                <input id="x/twitter" type="checkbox" name="social" value="X/Twitter">
-                <label for="x/twitter">X/Twitter</label><br>
-                <input id="linkedin" type="checkbox" name="social" value="Linkedin">
-                <label for="linkedin">Linkedin</label><br>
-                <input id="youtube" type="checkbox" name="social" value="YouTube">
-                <label for="youtube">YouTube</label><br>
-                <input id="tiktok" type="checkbox" name="social" value="TikTok">
-                <label for="tiktok">TikTok</label><br>
+                <small id="habitsHint">Compartilhe seus hábitos digitais e preferências culturais.</small>
+                <p id="socialLabel">Redes Sociais:</p>
+                <div role="group" aria-labelledby="socialLabel">
+                    <input id="instagram" type="checkbox" name="social" value="Instagram">
+                    <label for="instagram">Instagram</label><br>
+                    <input id="facebook" type="checkbox" name="social" value="Facebook">
+                    <label for="facebook">Facebook</label><br>
+                    <input id="xtwitter" type="checkbox" name="social" value="X/Twitter">
+                    <label for="xtwitter">X/Twitter</label><br>
+                    <input id="linkedin" type="checkbox" name="social" value="Linkedin">
+                    <label for="linkedin">Linkedin</label><br>
+                    <input id="youtube" type="checkbox" name="social" value="YouTube">
+                    <label for="youtube">YouTube</label><br>
+                    <input id="tiktok" type="checkbox" name="social" value="TikTok">
+                    <label for="tiktok">TikTok</label><br>
+                </div>
 
                 <label for="musicStyle">Selecione os estilos musicais que você gosta:</label>
-                <input id="" musicStyle" name="musicStyle" type="text">
+                <input id="musicStyle" name="musicStyle" type="text" list="styleTypes" aria-describedby="musicStyleHint">
                 <datalist id="styleTypes">
                     <option value="rock"></option>
                     <option value="pop"></option>
                     <option value="samba"></option>
                     <option value="forró"></option>
                 </datalist>
+                <small id="musicStyleHint">Digite um estilo musical ou escolha uma sugestão da lista.</small>
                 <br>
                 <label for="favoriteColor">Cor favorita:</label>
-                <input id="favoriteColor" type="color" name="favoriteColor" value="#000000">
+                <input id="favoriteColor" type="color" name="favoriteColor" value="#000000" aria-describedby="colorHint">
+                <small id="colorHint">Selecione a cor que mais representa você.</small>
             </fieldset>
-            <fieldset>
+            <fieldset aria-describedby="opinionHint">
                 <legend>Opinião:</legend>
-                <p>O que você acha da qualidade do site?</p>
-                <textarea id="opinion" name="opinion" rows="5" cols="30" placeholder="Digite sua opinião aqui"></textarea>
+                <small id="opinionHint">Conte-nos o que achou do site e avalie sua experiência.</small>
+                <small id="opinionQuestion">O que você acha da qualidade do site?</small>
+                <textarea id="opinion" name="opinion" rows="5" cols="30" placeholder="Digite sua opinião aqui" aria-describedby="opinionQuestion"></textarea>
                 <br>
-                <label for="rating">Avalie o site:</label><br>
-                <input id="ruim" type="radio" name="rating" value="Ruim">
-                <label for="ruim">Ruim</label><br>
-                <input id="regular" type="radio" name="rating" value="Regular">
-                <label for="regular">Regular</label><br>
-                <input id="bom" type="radio" name="rating" value="Bom">
-                <label for="bom">Bom</label><br>    
-                <input id="excelente" type="radio" name="rating" value="Excelente">
-                <label for="excelente">Excelente</label><br>   
-
+                <p id="ratingLabel">Avalie o site:</p>
+                <div role="radiogroup" aria-labelledby="ratingLabel">
+                    <input id="ruim" type="radio" name="rating" value="Ruim">
+                    <label for="ruim">Ruim</label><br>
+                    <input id="regular" type="radio" name="rating" value="Regular">
+                    <label for="regular">Regular</label><br>
+                    <input id="bom" type="radio" name="rating" value="Bom">
+                    <label for="bom">Bom</label><br>    
+                    <input id="excelente" type="radio" name="rating" value="Excelente">
+                    <label for="excelente">Excelente</label><br>   
+                </div>
             </fieldset>
-            <fieldset>
+            <fieldset aria-describedby="consentHint">
                 <legend>Confirmações:</legend>
-                <input type="checkbox" name="userLgpd" id="userLgpdTerm" value="accepted" required>
+                <small id="consentHint">Confirme a participação e escolha receber o resultado por email, se desejar.</small>
+                <input type="checkbox" name="userLgpd" id="userLgpdTerm" value="accepted" required aria-describedby="consentHint">
                 <label for="userLgpdTerm">Eu aceito participar da pesquisa</label><br>
 
-                <input type="checkbox" name="userGetResult" id="getResult" value="accepted">
+                <input type="checkbox" name="userGetResult" id="getResult" value="accepted" aria-describedby="consentHint">
                 <label for="getResult">Eu desejo receber o resultado por email</label><br>
             </fieldset>
-            <button type="submit">Enviar</button>
-            <button type="reset">Limpar</button>
-
-    </section>
-</main>
+                <button type="submit" aria-label="Enviar os dados da pesquisa">Enviar</button>
+                <button type="reset" aria-label="Limpar os dados da pesquisa">Limpar</button>
+            </form>
+        </section>
+    </main>
 </body>
 
 </html>
