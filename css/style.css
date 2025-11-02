@@ -7,6 +7,7 @@
 body {
     font-family: 'Work Sans', sans-serif;
     background-color: #f9f9f9;
+    margin-bottom: 10px;
 }
 
 main {
@@ -68,11 +69,14 @@ input[type='color'] {
 }
 
 button {
-    background-color: #007bff;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #cccccc;
     border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    margin-right: 10px;
+    cursor: pointer;
 }
 
 label {
@@ -80,3 +84,20 @@ label {
     margin-bottom: 5px;
 }
 
+input:invalid, seelct:invalid, textarea:invalid{
+    border-color: red;
+}
+
+input:valid, select:valid, textarea:valid{
+    border-color: green;
+}
+
+button[type="submit"]:hover{
+    background-color: green;
+    color: #ffffff;
+}
+
+button[type="reset"]:hover{
+    background-color: orangered;
+    color: #ffffff;
+}
